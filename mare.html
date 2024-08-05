@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Include Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Include Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    body {
+      background-color: white;
+      margin: 0;
+    }
+    .nav-container {
+      background-color: black;
+    }
+    .nav-item {
+      color: white;
+      font-weight: bold;
+      font-size: 1.125rem; /* text-lg */
+      background-color: black;
+    }
+    .nav-item:hover {
+      color: lightgray; /* Change to a lighter gray on hover */
+    }
+    .image-container {
+      perspective: 1000px; /* Create 3D space for 3D effect */
+    }
+    .image-container a {
+      display: block;
+      transform-style: preserve-3d;
+      transition: transform 0.3s ease-in-out;
+    }
+    .image-container a:hover {
+      transform: scale(1.1) rotateY(15deg); /* 3D scale and rotate effect */
+    }
+    .carousel-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    }
+    .carousel-caption {
+      color: white;
+      text-align: center;
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .carousel-caption h5 {
+      font-size: 2rem; /* Increased font size for the heading */
+      font-weight: bold;
+    }
+    .carousel-caption p {
+      font-size: 1.25rem; /* Increased font size for the paragraph */
+      max-width: 200%;
+      margin: 0 auto;
+    }
+    .meet-athletes-heading {
+      color: red;
+    }
+    .meet-athletes-heading {
+      color: red;
+    }
+    
+    .image-container {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .image-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    
+    .image-container:hover::before {
+      opacity: 1;
+    }
+    
+    .image-container a {
+      display: block;
+      position: relative;
+    }
+    .text-red-500 {
+      color: red;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <!-- Solid red background around logo and navbar -->
+  <div class="nav-container">
+    <header class="flex items-center justify-between container mx-auto px-5 py-4">
+      <a href="index.html">
+        <img src="new_logo-removebg-preview.png" class="logo" style="filter: brightness(0) invert(1);"> <!-- Logo with white color -->
+      </a>
+      <nav>
+        <header class="text-gray-600 body-font">
+            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+              <a href="index.html" class="mr-5 nav-item">Home</a>
+              <a href="about.html" class="mr-5 nav-item">About</a>
+              <a href="trainers.html" class="mr-5 nav-item">Trainers</a>
+              <a href="events.html" class="mr-5 nav-item">Events</a>
+              
+              <a href="contact.html" class="mr-5 nav-item">Contact Us</a>
+            </nav>
+          </div>
+        </header>
+      </nav>
+    </header>
+  </div>
+
+  <!-- Content Section -->
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <h1 class="text-3xl font-bold mb-12 text-center meet-athletes-heading">Meet the Athletes: Horse Breeds in Racing</h1>
+      
+      <!-- Brown Horse Section -->
+      <div class="lg:w-1/3 sm:w-1/2 p-4">
+        <div class="flex flex-col lg:flex-row">
+          <!-- Brown Horse Image -->
+          <div class="lg:w-1/2 lg:pr-4 lg:py-2">
+            <img src="brown.jpg" alt="Brown Horse" class="w-full h-auto rounded-lg">
+          </div>
+          <!-- Brown Horse Information -->
+          <div class="lg:w-1/2 lg:pl-4 lg:py-2">
+            <h2 class="text-2xl font-bold mb-4 text-red-500">Brown Horse</h2>
+            <p><strong>Definition:</strong> A brown horse refers to a horse with a brown coat color. This color can range from light brown to almost black, often with lighter areas around the muzzle, eyes, and flanks.</p>
+            <p><strong>Characteristics:</strong> Brown horses are known for their rich, deep coat color, which can vary widely among individuals. They have the same physical and behavioral traits as horses of other colors, and their performance is not determined by coat color.</p>
+            <p><strong>Age:</strong> Any age.</p>
+            <p><strong>Number of Races:</strong> Brown horses, like other horses, can participate in numerous races throughout their careers. The number of races varies depending on the horse's breed, health, and discipline. A typical racehorse might compete in 20-30 races or more over their career.</p>
+            <p><strong>Usage:</strong> Brown horses are used in all equestrian disciplines, including racing, show jumping, dressage, and recreational riding. Their coat color does not affect their abilities or suitability for specific activities.</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+</body>
+</html>

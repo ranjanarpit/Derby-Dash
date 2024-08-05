@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Include Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Include Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    body {
+      background-color: white;
+      margin: 0;
+    }
+    .nav-container {
+      background-color: black;
+    }
+    .nav-item {
+      color: white;
+      font-weight: bold;
+      font-size: 1.125rem; /* text-lg */
+      background-color: black;
+    }
+    .nav-item:hover {
+      color: lightgray; /* Change to a lighter gray on hover */
+    }
+    .image-container {
+      perspective: 1000px; /* Create 3D space for 3D effect */
+    }
+    .image-container a {
+      display: block;
+      transform-style: preserve-3d;
+      transition: transform 0.3s ease-in-out;
+    }
+    .image-container a:hover {
+      transform: scale(1.1) rotateY(15deg); /* 3D scale and rotate effect */
+    }
+    .carousel-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    }
+    .carousel-caption {
+      color: white;
+      text-align: center;
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .carousel-caption h5 {
+      font-size: 2rem; /* Increased font size for the heading */
+      font-weight: bold;
+    }
+    .carousel-caption p {
+      font-size: 1.25rem; /* Increased font size for the paragraph */
+      max-width: 200%;
+      margin: 0 auto;
+    }
+    .meet-athletes-heading {
+      color: red;
+    }
+    .meet-athletes-heading {
+      color: red;
+    }
+    
+    .image-container {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .image-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    
+    .image-container:hover::before {
+      opacity: 1;
+    }
+    
+    .image-container a {
+      display: block;
+      position: relative;
+    }
+    .text-red-500 {
+      color: red;
+    }
+
+    /* New styles for breed info */
+    .breed-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .breed-image {
+      flex: 0 0 40%; /* 40% width */
+    }
+
+    .breed-image img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .breed-details {
+      flex: 0 0 50%; /* 50% width */
+    }
+
+    .breed-details h2 {
+      font-size: 24px;
+      font-weight: bold;
+      color: red;
+    }
+
+    .breed-details p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Solid red background around logo and navbar -->
+  <div class="nav-container">
+    <header class="flex items-center justify-between container mx-auto px-5 py-4">
+      <a href="index.html">
+        <img src="new_logo-removebg-preview.png" class="logo" style="filter: brightness(0) invert(1);"> <!-- Logo with white color -->
+      </a>
+      <nav>
+        <header class="text-gray-600 body-font">
+            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+              <a href="index.html" class="mr-5 nav-item">Home</a>
+              <a href="about.html" class="mr-5 nav-item">About</a>
+              <a href="trainers.html" class="mr-5 nav-item">Trainers</a>
+              <a href="events.html" class="mr-5 nav-item">Events</a>
+              
+              <a href="contact.html" class="mr-5 nav-item">Contact Us</a>
+            </nav>
+          </div>
+        </header>
+      </nav>
+    </header>
+  </div>
+
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <h1 class="text-3xl font-bold mb-12 text-center meet-athletes-heading">Meet the Athletes: Horse Breeds in Racing</h1>
+      <div class="breed-info">
+        <div class="breed-image">
+          <img src="gelding.jpg" alt="Gelding Image">
+        </div>
+        <div class="breed-details">
+          <h2>Gelding</h2>
+          <p><strong>Definition:</strong> A gelding is a castrated male horse of any age. Geldings are known for their more even temperament compared to stallions.</p>
+          <p><strong>Characteristics:</strong> Geldings are generally calmer and easier to handle than stallions. They do not exhibit the same hormonal behaviors as intact males, making them suitable for a wide range of equestrian activities.</p>
+          <p><strong>Age:</strong> Any age.</p>
+          <p><strong>Number of Races:</strong> Geldings often have long and productive racing careers, participating in 20-40 races or more, depending on their health and training.</p>
+          <p><strong>Usage:</strong> Geldings are popular in all types of equestrian sports, including racing, show jumping, dressage, and trail riding. Their reliable nature makes them suitable for riders of all experience levels.</p>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+</body>
+</html>

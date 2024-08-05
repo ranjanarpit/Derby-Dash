@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Include Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Include Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    body {
+      background-color: white;
+      margin: 0;
+      
+    }
+    .nav-container {
+      background-color:brown;
+    }
+    .nav-item {
+      color: white;
+      font-weight: bold;
+      font-size: 1.125rem; /* text-lg */
+      background-color:brown;
+    }
+    .nav-item:hover {
+      color: lightgray; /* Change to a lighter gray on hover */
+    }
+    .image-container {
+      perspective: 1000px; /* Create 3D space for 3D effect */
+    }
+    .image-container a {
+      display: block;
+      transform-style: preserve-3d;
+      transition: transform 0.3s ease-in-out;
+    }
+    .image-container a:hover {
+      transform: scale(1.1) rotateY(15deg); /* 3D scale and rotate effect */
+    }
+    .carousel-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    }
+    .carousel-caption {
+      color: white;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .carousel-caption h5 {
+      font-size: 2rem; /* Increased font size for the heading */
+      font-weight: bold;
+
+    }
+    .carousel-caption p {
+      font-size: 1.25rem; /* Increased font size for the paragraph */
+      max-width: 200%;
+      margin: 0 auto;
+    
+    }
+    .meet-athletes-heading {
+      color: red;
+      text-align: center;
+    }
+    
+    .image-container {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .image-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    
+    .image-container:hover::before {
+      opacity: 1;
+    }
+    
+    .image-container a {
+      display: block;
+      position: relative;
+    }
+    .text-red-500 {
+      color: red;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <!-- Transparent navbar on top of the carousel -->
+  <div class="nav-container">
+    <header class="flex items-center justify-between container mx-auto px-5 py-4">
+      <a href="index.html">
+        <img src="new_logo-removebg-preview.png" class="logo" style="filter: brightness(0) invert(1);"> <!-- Logo with white color -->
+      </a>
+      <nav class="text-gray-600 body-font">
+        <div class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+          <a href="index.html" class="mr-5 nav-item">Home</a>
+          <a href="about.html" class="mr-5 nav-item">About</a>
+          <a href="trainers.html" class="mr-5 nav-item">Trainers</a>
+          <a href="events.html" class="mr-5 nav-item">Events</a>
+          <a href="contact.html" class="mr-5 nav-item">Contact Us</a>
+        </div>
+      </nav>
+    </header>
+  </div>
+
+  <!-- Bootstrap Carousel for sliding images -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="carousel-overlay"></div> <!-- Translucent black overlay -->
+        <img src="missionpic.jpg" class="d-block w-100" alt="Slide 1">
+        <div class="carousel-caption">
+          <h5>Our Mission</h5>
+          <p>This Horse Racing Prediction web app provides accurate and reliable predictions to empower bettors, enhance engagement within the horse racing community, support industry professionals, promote responsible gambling, advance research in horse racing analytics, uphold transparency and integrity in prediction algorithms, and ensure accessibility for all users. It aims to become a trusted and indispensable tool for anyone involved or interested in horse racing, ultimately enriching the overall experience of the sport for all stakeholders.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-overlay"></div> <!-- Translucent black overlay -->
+        <img src="pexels-coldbeer-277046249-15215848.jpg" class="d-block w-100" alt="Slide 2">
+        <div class="carousel-caption">
+          <h5>What We Offer</h5>
+          <p>We offer accurate predictions to empower bettors, fosters community engagement among enthusiasts, provides data and analytics for industry professionals, promotes responsible gambling, advances research in horse racing analytics, ensures transparency and integrity in predictions, and prioritizes accessibility for all users. It aims to enrich the horse racing experience for stakeholders while promoting responsible engagement with the sport.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-overlay"></div> <!-- Translucent black overlay -->
+        <img src="pexels-absolute-charm-1561240-3015224.jpg" class="d-block w-100" alt="Slide 3">
+        <div class="carousel-caption">
+          <h5>How It Works</h5>
+          <p>This app operates by collecting and analyzing various data points related to horse races, using advanced algorithms to generate predictions for upcoming events. These predictions are then presented to users through the app's interface, allowing them to make informed betting decisions. As new race results become available, the app continuously refines its algorithms to improve prediction accuracy. Ultimately, it aims to provide users with valuable insights to enhance their horse racing experience.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <h1 class="text-3xl font-bold mb-12 text-center meet-athletes-heading">Meet the Athletes: Horse Breeds in Racing</h1>
+      <div class="flex flex-wrap -m-4">
+        <div class="lg:w-1/3 sm:w-1/2 p-4 image-container">
+          <div class="flex relative">
+            <a href="colt.html">
+              <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="colt.jpg">
+              <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+                <h2 class="tracking-widest text-sm title-font font-medium text-red-500 mb-1">COLT</h2>
+                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">b</h1>
+                <p class="leading-relaxed">Description for the first image.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4 image-container">
+          <div class="flex relative">
+            <a href="gelding.html">
+              <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="gelding.jpg">
+              <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">SUBTITLE 2</h2>
+                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Title 2</h1>
+                <p class="leading-relaxed">Description for the second image.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4 image-container">
+          <div class="flex relative">
+            <a href="mare.html">
+              <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="mare.jpg">
+              <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">SUBTITLE 3</h2>
+                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Title 3</h1>
+                <p class="leading-relaxed">Description for the third image.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4 image-container">
+          <div class="flex relative">
+            <a href="rig.html">
+              <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="rig.jpg">
+              <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">SUBTITLE 4</h2>
+                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Title 4</h1>
+                <p class="leading-relaxed">Description for the fourth image.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4 image-container">
+          <div class="flex relative">
+            <a href="filly.html">
+              <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="filly.jpg">
+              <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">SUBTITLE 5</h2>
+                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Title 5</h1>
+                <p class="leading-relaxed">Description for the fifth image.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4 image-container">
+          <div class="flex relative">
+            <a href="brown.html">
+              <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="brown.jpg">
+              <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">SUBTITLE 6</h2>
+                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Title 6</h1>
+                <p class="leading-relaxed">Description for the sixth image.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

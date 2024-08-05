@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Include Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Include Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    body {
+      background-color: white;
+      margin: 0;
+    }
+    .nav-container {
+      background-color: black;
+    }
+    .nav-item {
+      color: white;
+      font-weight: bold;
+      font-size: 1.125rem; /* text-lg */
+      background-color: black;
+    }
+    .nav-item:hover {
+      color: lightgray; /* Change to a lighter gray on hover */
+    }
+    .image-container {
+      perspective: 1000px; /* Create 3D space for 3D effect */
+    }
+    .image-container a {
+      display: block;
+      transform-style: preserve-3d;
+      transition: transform 0.3s ease-in-out;
+    }
+    .image-container a:hover {
+      transform: scale(1.1) rotateY(15deg); /* 3D scale and rotate effect */
+    }
+    .carousel-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    }
+    .carousel-caption {
+      color: white;
+      text-align: center;
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .carousel-caption h5 {
+      font-size: 2rem; /* Increased font size for the heading */
+      font-weight: bold;
+    }
+    .carousel-caption p {
+      font-size: 1.25rem; /* Increased font size for the paragraph */
+      max-width: 200%;
+      margin: 0 auto;
+    }
+    .meet-athletes-heading {
+      color: red;
+    }
+    .meet-athletes-heading {
+      color: red;
+    }
+    
+    .image-container {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .image-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    
+    .image-container:hover::before {
+      opacity: 1;
+    }
+    
+    .image-container a {
+      display: block;
+      position: relative;
+    }
+    .text-red-500 {
+      color: red;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <!-- Solid red background around logo and navbar -->
+  <div class="nav-container">
+    <header class="flex items-center justify-between container mx-auto px-5 py-4">
+      <a href="index.html">
+        <img src="new_logo-removebg-preview.png" class="logo" style="filter: brightness(0) invert(1);"> <!-- Logo with white color -->
+      </a>
+      <nav>
+        <header class="text-gray-600 body-font">
+            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+              <a href="index.html" class="mr-5 nav-item">Home</a>
+              <a href="about.html" class="mr-5 nav-item">About</a>
+              <a href="trainers.html" class="mr-5 nav-item">Trainers</a>
+              <a href="events.html" class="mr-5 nav-item">Events</a>
+              
+              <a href="contact.html" class="mr-5 nav-item">Contact Us</a>
+            </nav>
+          </div>
+        </header>
+      </nav>
+    </header>
+  </div>
+        
+    <!-- Input form for selecting a date -->
+    <div class="container px-5 py-10 mx-auto">
+      <label for="selectedDate" class="block text-gray-700 text-sm font-bold mb-2">Select Date:</label>
+      <input type="date" id="selectedDate" onchange="filterRaceDetails()" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    
+    <!-- JavaScript to enforce the year limit on the date input and filter race details -->
+    <script>
+      const currentDate = new Date();
+      const maxDate = new Date(2006, 11, 31); // December 31, 2006
+      const maxDateString = maxDate.toISOString().split('T')[0]; // Format as yyyy-mm-dd
+      document.getElementById('selectedDate').max = maxDateString;
+    
+      // Function to generate random race details
+      function generateRandomRaceDetails() {
+        const venues = ['ST', 'HV'];
+        const distancesInKm = [1, 1.5, 2]; // Distances in kilometers
+        const raceId = Math.floor(Math.random() * (7358 - 6349 + 1)) + 6349; // Generate race ID between 6349 and 7358
+        const randomVenue = venues[Math.floor(Math.random() * venues.length)];
+        const randomDistance = distancesInKm[Math.floor(Math.random() * distancesInKm.length)]; // Select random distance in kilometers
+        const randomWinner = Math.floor(Math.random() * 4405); // Generate horse ID between 0 and 4404
+        return { raceId, venue: randomVenue, distance: randomDistance, winner: randomWinner };
+      }
+    
+      // Function to filter race details based on selected date
+      function filterRaceDetails() {
+        const selectedDate = document.getElementById('selectedDate').value;
+        const tableBody = document.querySelector('tbody');
+        
+        // Remove existing rows
+        tableBody.innerHTML = '';
+    
+        // Simulate multiple races happening on the selected date
+        for (let i = 0; i < 3; i++) { // Change 3 to the desired number of races per day
+          // Create new row with random race details for the selected date
+          const { raceId, venue, distance, winner } = generateRandomRaceDetails();
+          const newRow = `
+            <tr>
+              <td class="px-4 py-3">${selectedDate}</td>
+              <td class="px-4 py-3">${raceId}</td>
+              <td class="px-4 py-3">${venue}</td>
+              <td class="px-4 py-3 sm:px-2">${distance} km</td> <!-- Display distance in kilometers -->
+              <td class="px-4 py-3">${winner}</td>
+            </tr>
+          `;
+          tableBody.innerHTML += newRow;
+        }
+      }
+    </script>
+    
+    <!-- Remaining HTML code -->
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 mx-auto">
+        <div class="flex flex-col text-center w-full mb-10">
+          <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">Horse Races</h1>
+        </div>
+        <div class="lg:w-2/3 w-full mx-auto overflow-auto">
+          <table class="table-auto w-full text-left whitespace-no-wrap bg-red-100">
+            <thead>
+              <tr>
+                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">Date</th>
+                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Race ID</th>
+                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Venue</th>
+                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Distance</th>
+                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Winner ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Dynamic content will be added here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    
+    </body>
+    </html>
+    

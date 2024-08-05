@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Include Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Include Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    body {
+      background-color: white;
+      margin: 0;
+    }
+    .nav-container {
+      background-color: brown;
+    }
+    .nav-item {
+      color: white;
+      font-weight: bold;
+      font-size: 1.125rem; /* text-lg */
+      background-color: brown;
+    }
+    .nav-item:hover {
+      color: lightgray; /* Change to a lighter gray on hover */
+    }
+    .image-container {
+      perspective: 1000px; /* Create 3D space for 3D effect */
+    }
+    .image-container a {
+      display: block;
+      transform-style: preserve-3d;
+      transition: transform 0.3s ease-in-out;
+    }
+    .image-container a:hover {
+      transform: scale(1.1) rotateY(15deg); /* 3D scale and rotate effect */
+    }
+    .carousel-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    }
+    .carousel-caption {
+      color: white;
+      text-align: center;
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .carousel-caption h5 {
+      font-size: 2rem; /* Increased font size for the heading */
+      font-weight: bold;
+    }
+    .carousel-caption p {
+      font-size: 1.25rem; /* Increased font size for the paragraph */
+      max-width: 200%;
+      margin: 0 auto;
+    }
+    .meet-athletes-heading {
+      color: red;
+    }
+    .image-container {
+      position: relative;
+      overflow: hidden;
+    }
+    .image-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    .image-container:hover::before {
+      opacity: 1;
+    }
+    .image-container a {
+      display: block;
+      position: relative;
+    }
+    .text-red-500 {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Solid red background around logo and navbar -->
+  <div class="nav-container">
+    <header class="flex items-center justify-between container mx-auto px-5 py-4">
+      <a href="index.html">
+        <img src="new_logo-removebg-preview.png" class="logo" style="filter: brightness(0) invert(1);"> <!-- Logo with white color -->
+      </a>
+      <nav>
+        <div class="text-gray-600 body-font">
+          <div class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a href="index.html" class="mr-5 nav-item">Home</a>
+            <a href="about.html" class="mr-5 nav-item">About</a>
+            <a href="trainers.html" class="mr-5 nav-item">Trainers</a>
+            <a href="events.html" class="mr-5 nav-item">Events</a>
+            
+            <a href="contact.html" class="mr-5 nav-item">Contact Us</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+  </div>
+
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-10"> <!-- Reduce margin-bottom here -->
+        <h1 class="text-2xl font-medium title-font mb-4 text-black tracking-widest">OUR TEAM</h1>
+        <p class="mb-4">We take great satisfaction in having a group of committed professionals on our team that are passionate about the sport and contribute a wealth of experience to it. The wide range of experience on our staff guarantees that each horse and rider gets the best possible care, instruction, and assistance.A shared vision of excellence in horse racing unites our team. We are dedicated to the well-being of our horses and have a strong passion for the sport. Our management team and support personnel put in a lot of overtime behind the scenes to handle entrants, plan race logistics, and supervise club activities as a whole. Everything functions properly because of their commitment and organizational abilities.We work together to produce exceptional outcomes both on and off the track.</p>
+      </div>
+      <!-- Trainers Subsection -->
+      <div class="flex flex-col text-center w-full mb-20">
+        <h2 class="text-2xl font-medium title-font mb-4 text-black tracking-widest">TRAINERS</h2>
+        <div class="flex flex-wrap -m-4">
+          <div class="p-4 lg:w-1/2">
+            <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+              <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="aslam_kader.jpg">
+              <div class="flex-grow sm:pl-8">
+                <h2 class="title-font font-medium text-lg text-gray-900">Aslam Kader</h2>
+                <br>
+                
+                <p class="mb-4">Kader has ridden over 1700 winning horses, including 75 wins in classic horse races over his two-decade career. He has won the Champion Jockeys title at every racing centre in India and won the title nine times at the Bangalore Center and thrice in Mumbai. He holds the record for having ridden the maximum of numbers in one season at Mumbai, which stands at 77.</p>
+                <p class="mb-4">Achievements:</p>
+                <ul class="mb-4">
+                  <li>28 July 2018 at the Wayback Machine profile at IndiaRace.com</li>
+                </ul>
+                <span class="inline-flex">
+                  <a class="text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                  </a>
+                  <a class="ml-2 text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                    </svg>
+                  </a>
+                  <a class="ml-2 text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9 8.5 8.5 0 017.6 4.7 8.38 8.38 0 01.9 3.8z"></path>
+                    </svg>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 lg:w-1/2">
+            <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+              <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="yssrinath.jpeg">
+              <div class="flex-grow sm:pl-8">
+                <h2 class="title-font font-medium text-lg text-gray-900">Y. S. Srinath</h2>
+                <br>
+                <p class="mb-4">Y. S. Srinath is a champion jockey from Bangalore who has ridden over 1250 winners, of which 94 graded races. He was the first Indian Jockey to win more than 25 races outside of India and has won many important classics.</p>
+                <p class="mb-4">Achievements:</p>
+                <ul class="mb-4">
+                  <li>Between 2016 and 2020, Srinath won 35 group races in centres all over India </li>
+                </ul>
+                <span class="inline-flex">
+                  <a class="text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                  </a>
+                  <a class="ml-2 text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                    </svg>
+                  </a>
+                  <a class="ml-2 text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9 8.5 8.5 0 017.6 4.7 8.38 8.38 0 01.9 3.8z"></path>
+                    </svg>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 lg:w-1/2">
+            <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+              <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="pesishroff.jpg">
+              <div class="flex-grow sm:pl-8">
+                <h2 class="title-font font-medium text-lg text-gray-900">Pesi Shroff</h2>
+                <br>
+                <p class="mb-4">Pesi Shroff has ridden 5,614 races and won 1,751 of them, including 106 classic races and 29 Derbys. Born to a Parsi family, he began his career at 16 years old when he was licensed to ride by the Royal Western India Turf Club in Mumbai in 1981. He won his first race on My Squaw</p>
+                <p class="mb-4">Achievements:</p>
+                <ul class="mb-4">
+                  <li>Indian Derby(1984-2004)</li>
+                  <li>Indian Turf Invitation(1985-2001)</li>
+                </ul>
+                <span class="inline-flex">
+                  <a class="text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                  </a>
+                  <a class="ml-2 text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                    </svg>
+                  </a>
+                  <a class="ml-2 text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9 8.5 8.5 0 017.6 4.7 8.38 8.38 0 01.9 3.8z"></path>
+                    </svg>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 lg:w-1/2">
+            <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+              <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="rupasingh.jpg">
+              <div class="flex-grow sm:pl-8">
+                <h2 class="title-font font-medium text-lg text-gray-900">Rupa Singh</h2>
+                <br>
+                <p class="mb-4">Rupa Singh has already earned 720 wins to her name. She has won seven championships, participated in several international races, and is a champion.</p>
+                <p class="mb-4">Achievements:</p>
+                <ul class="mb-4">
+                  <li> She has won the 2010 Madras Classics.</li>
+                  
+                </ul>
+                <span class="inline-flex">
+                  <a class="text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                  </a>
+                  <a class="ml-2 text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                    </svg>
+                  </a>
+                  <a class="ml-2 text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9 8.5 8.5 0 017.6 4.7 8.38 8.38 0 01.9 3.8z"></path>
+                    </svg>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

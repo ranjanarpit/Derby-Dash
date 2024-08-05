@@ -1,0 +1,49 @@
+
+/* Adjust the size of the logo */
+img.logo {
+  width: 80px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+.transparent-bg1 {
+  background-color: rgb(255, 255, 255); /* Adjust the alpha value (0.8 in this case) */
+}
+.carousel-container {
+    max-width: 200px; /* Adjust the max-width as needed */
+}
+/* Center the text */
+.centered-text {
+  text-align: left; /* Align to the left */
+  margin-top: 50px; /* Adjust margin-top as needed */
+  padding-left: 20px; /* Adjust padding-left for spacing */
+}
+/* Style for the button */
+.get-started-button {
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px; /* Adjust margin-top as needed */
+  cursor: pointer;
+  border-radius: 4px;
+}
+.get-started-button:hover {
+  background-color: #45a049; /* Darker Green */
+}
+/* Font styles */
+h1 {
+  font-family: 'Bernard MT Condensed', sans-serif; /* Change the font family */
+  font-weight: normal; /* Reset font weight */
+  font-size: 72px; /* Increase font size */
+}
+p {
+  font-family: Arial, sans-serif; /* Change the font family */
+}
+.about-background {
+    background-image: url('bg6.jpg'); /* Replace with your desired background image */
+    background-size: cover;
+    background-position: center;
+  }

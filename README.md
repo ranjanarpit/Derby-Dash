@@ -32,3 +32,10 @@ View Predictions:<br>
 Based on the input data, the application processes the information and provides predictions with an accuracy rate of 92%.<br>
 Analyze Data Visualizations:<br>
 Users can view detailed visualizations of historical data and predictions to make informed decisions about race outcomes.<br><br>
+
+Contributors<br>
+Developer: Arpit Ranjan<br>
+Contact: arpitranjan204@gmail.com<br>
+LinkedIn: https://www.linkedin.com/in/arpit-ranjan-86100822b/<br>
+GitHub: https://github.com/ranjanarpit<br><br>
+
